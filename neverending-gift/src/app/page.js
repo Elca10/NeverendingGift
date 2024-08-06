@@ -2,14 +2,65 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
+    // <main className="flex min-h-screen flex-col items-center justify-between p-24">
+    <main className="flex min-h-screen flex-col items-center justify-around">
       <div>
         <h1>Neverending Gift</h1>
       </div>
-      <div>
+      {/* <div class="bg-cover bg-center min-h-screen" style={{ backgroundImage: "url('/ghost-gift.png')" }}> */}
+
+      {/* <div className="absolute w-1/2 h-1/2" style={{ top: '50%' }}>
+        <p>Centered Box</p>
+      </div> */}
+      <div className="w-1/2 h-1/2">
+        <p>Centered Box</p>
+      </div>
+
+      {/* <div class="bg-cover bg-center min-h-screen" style={{ backgroundImage: "url('/ghost-gift.png')" }}>
+        Type your name:
+        <input type="text" />
+      </div> */}
+      {/* <div class="skewed">
         Enter code:
         <input type="text" />
         <button>Submit</button>
+      </div> */}
+    </main>
+  );
+
+  return (
+    <main className="flex min-h-screen flex-col items-center justify-between p-24 poiret-one-regular">
+      <div>
+        {/* Headers */}
+        <h1>Header 1</h1>
+        <h2>Header 2</h2>
+        <h3>Header 3</h3>
+        <h4>Header 4</h4>
+        {/* Button */}
+        <button>Button</button>
+        {/* Label */}
+        <label>Label</label>
+        {/* Input */}
+        <input type="text" />
+        {/* Text */}
+        <p>Paragraph</p>
+        <span>Span</span>
+        <div>Div</div>
+        <a href="#">Link</a>
+        <ul>
+          <li>Unordered List Item 1</li>
+          <li>Unordered List Item 2</li>
+        </ul>
+        <div >
+          <Image
+            src="/ghost-gift.png"
+            alt="Giftbox"
+            className="dark:invert"
+            width={500}
+            height={500}
+            priority
+          />
+        </div>
       </div>
     </main>
   );
