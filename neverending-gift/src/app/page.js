@@ -1,6 +1,53 @@
+'use client';
+
 import Image from "next/image";
+import { useState } from 'react';
 
 export default function Home() {
+
+  const [idError, setIDError] = useState(false);
+
+  const checkValidID = () => {
+    console.log("checkValidID");
+    return true;
+  }
+
+  const onKeyDownBoxID = (e) => {
+    setIDError(false);
+
+    if (e.key === "Enter") {
+      // check with server if valid
+      // if valid, redirect to /welcome
+      // else, show error
+
+      if (checkValidID()) {
+        window.location.href = "/welcome";
+      } else {
+        setIDError(true);
+        return;
+      }
+      checkValidID();
+    }
+  }
+
+  return (
+    <main className="flex min-h-screen flex-col items-center justify-around">
+      <div>
+        <h1>Neverending Gift</h1>
+      </div>
+      <label htmlFor="box-id">ENTER BOX ID</label>
+      {/* number only input */}
+      <input type="number" id="box-id" name="box-id" onKeyDown={onKeyDownBoxID}/>
+      {/* conditional error message */}
+      {idError && <p>Invalid Box ID</p>}
+    </main>
+  );
+
+
+
+
+
+
   return (
     // <main className="flex min-h-screen flex-col items-center justify-between p-24">
     <main className="flex min-h-screen flex-col items-center justify-around">
