@@ -12,6 +12,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDyXgkobrXgFTNZqpKgqi_XEOe-j3BOe_o"></script>
         <style>
           {`@import url('https://fonts.googleapis.com/css2?family=Poiret+One&display=swap');`}
         </style>

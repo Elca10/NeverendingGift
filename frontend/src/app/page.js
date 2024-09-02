@@ -2,9 +2,10 @@
 
 import Image from "next/image";
 import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 
 export default function Home() {
-
+  const router = useRouter();
   const [idError, setIDError] = useState(false);
 
   const checkValidID = () => {
@@ -21,7 +22,7 @@ export default function Home() {
       // else, show error
 
       if (checkValidID()) {
-        window.location.href = "/welcome";
+        router.push("/welcome");
       } else {
         setIDError(true);
         return;
@@ -32,14 +33,22 @@ export default function Home() {
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-around">
-      <div>
-        <h1>Neverending Gift</h1>
+      <h1>Neverending Gift</h1>
+      <div className="flex items-center bg-cover bg-center bg-no-repeat" style={{backgroundImage: 'url("/ghost-gift.png")', textAlign: 'center', width: 500, height: 500}}>
+        <div>
+          <label htmlFor="box-id">ENTER BOX ID</label><br/>
+          <input type="number" id="box-id" name="box-id" onKeyDown={onKeyDownBoxID}/>
+          {idError && <p>Invalid Box ID</p>}
+        </div>
+        {/* <Image
+          src="/ghost-gift.png"
+          alt="Giftbox"
+          className="dark:invert"
+          width={500}
+          height={500}
+          priority
+        /> */}
       </div>
-      <label htmlFor="box-id">ENTER BOX ID</label>
-      {/* number only input */}
-      <input type="number" id="box-id" name="box-id" onKeyDown={onKeyDownBoxID}/>
-      {/* conditional error message */}
-      {idError && <p>Invalid Box ID</p>}
     </main>
   );
 

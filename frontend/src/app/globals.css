@@ -3,63 +3,48 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 255, 255, 255;
-  --background-start-rgb: 39, 39, 39;
-  --background-end-rgb: 0, 0, 0;
+  --light-1: #adadad;
+  --dark-1: #2a2a2a;
 }
 
-div {
-  border: 1px solid rgb(var(--foreground-rgb));
-}
+/* div {
+  border: 1px solid rgb(var(--light-1));
+} */
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  color: var(--light-1);
+  background: var(--dark-1);
+}
+
+main {
+  font-family: "Poiret One", sans-serif;
 }
 
 h1 {
-  font-size: 2.5rem;
+  font-size: 3.5rem;
+  font-weight: 600;
+  text-align: center;
 }
-
 h2 {
   font-size: 2rem;
+  font-weight: 600;
 }
-
-h3 {
-  font-size: 1.75rem;
-}
-
-h4 {
-  font-size: 1.5rem;
-}
-
 button {
-  color: rgb(var(--foreground-rgb));
-  background: rgb(var(--background-start-rgb));
+  color: var(--dark-1);
+  background: var(--light-1);
+  border-radius: 0.25rem;
+  padding: 0.25rem 0.75rem;
 }
-
 label {
-  color: rgb(var(--foreground-rgb));
+  color: var(--light-1);
 }
-
 input {
-  color: rgb(var(--foreground-rgb));
-  background: rgb(var(--background-start-rgb));
+  color: var(--dark-1);
+  background: var(--light-1);
+  border-radius: 0.25rem;
 }
-
 paragraph {
-  color: rgb(var(--foreground-rgb));
-}
-
-.poiret-one-regular {
-  font-family: "Poiret One", sans-serif;
-  font-weight: 400;
-  font-style: normal;
+  color: var(--light-1);
 }
 
 @layer utilities {
