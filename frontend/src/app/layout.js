@@ -1,5 +1,6 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
+import Script from "next/script";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -12,10 +13,10 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDyXgkobrXgFTNZqpKgqi_XEOe-j3BOe_o"></script>
-        <style>
-          {`@import url('https://fonts.googleapis.com/css2?family=Poiret+One&display=swap');`}
-        </style>
+        <Script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDyXgkobrXgFTNZqpKgqi_XEOe-j3BOe_o" strategy="afterInteractive"></Script>
+        {/* <style>
+          {"@import url('https://fonts.googleapis.com/css2?family=Poiret+One&display=swap');"}
+        </style> */}
       </head>
       <body className={inter.className}>{children}</body>
     </html>

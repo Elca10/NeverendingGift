@@ -7,8 +7,10 @@ import { useState } from 'react';
 export default function Home() {
   const router = useRouter();
   const [usernameError, setUsernameError] = useState(false);
+  const [name, setName] = useState("") // using state to save the user input for later use
 
   const checkValidUsername = () => {
+    // will check to see if username is already taken or not
     console.log("checkValidUsername");
     return true;
   }
@@ -33,7 +35,7 @@ export default function Home() {
         <h2>Pick a username</h2>
       </div>
       Pick a username:
-      <input id="username" name="username" onKeyDown={onKeyDownUsername}/>
+      <input id="username" name="username" onChange={(e)=>{setName(e.target.value)}} onKeyDown={onKeyDownUsername}/> 
     </main>
-  );
+  ); // onChange --> setting the name variable (see top of file) to be the user input so that we can work with it later
 }

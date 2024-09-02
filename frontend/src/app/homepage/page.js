@@ -6,6 +6,10 @@ import { useRouter } from 'next/navigation';
 export default function Home() {
   const router = useRouter();
 
+  const handleActivityForwarding = () => {
+    router.push("/activityPage")
+  }
+
   return (
     <main className="flex min-h-screen flex-col items-center justify-items-start">
       <h1>Neverending Gift</h1>
@@ -19,8 +23,11 @@ export default function Home() {
           width: '100%',
         }}>
         <button onClick={() => router.push("/new-user")}>Profile</button>
+        
       </div>
       <button onClick={() => router.push("/new-user")}>New User</button>
     </main>
+
+    //<ActivityButton activityName = {"maps"} onClick={() => {handleActivityForwarding("maps")}></>
   );
 }

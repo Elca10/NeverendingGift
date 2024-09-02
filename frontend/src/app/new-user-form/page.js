@@ -18,6 +18,8 @@ export default function Home() {
         center: defaultLocation,
       });
 
+      
+
       const marker = new google.maps.Marker({
         position: defaultLocation,
         map: map,
@@ -46,7 +48,7 @@ export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-around">
       <div>
-        <h1>Let's get started!</h1>
+        <h1>Let&apos;s get started!</h1>
       </div>
       <form>
         <div>
@@ -56,13 +58,13 @@ export default function Home() {
         <div>
           Message to the next recipient:<br/>
           <textarea style={{width: "100%", maxWidth: "100%"}} id="message" name="message"/><br/>
-          You can come back to this later, if you'd like.
+          You can come back to this later, if you&apos;d like.
         </div>
         <div>
           Location:
           <div id="map" style={{ height: '30rem', width: '100%' }}></div>
           <p>Coordinates: <span id="coords"></span></p>
-          Not required, but encouraged! You can be as specific/general as you'd like.
+          Not required, but encouraged! You can be as specific/general as you&apos;d like.
         </div>
         <button type="submit">Next</button>
       </form>
