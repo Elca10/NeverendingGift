@@ -1,39 +1,51 @@
+const express = require('express')
+const app = express()
+const port = 3000
 
 
-// This is all copied from ChatGPT
+app.get('/', (req, res) => {
+  res.send('hi')
+})
 
-const express = require('express');
-const { MongoClient } = require('mongodb');
-require('dotenv').config();
+app.listen(port, () => {
+  console.log(`App listening on port ${port}`)
+})
 
-const app = express();
-const port = process.env.PORT || 3000;
 
-// Middleware
-app.use(express.json());
+// // This is all copied from ChatGPT
 
-// MongoDB connection
-const uri = process.env.MONGODB_URI;
-console.log(uri);
-const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+// const express = require('express');
+// const { MongoClient } = require('mongodb');
+// require('dotenv').config();
 
-client.connect(err => {
-  if (err) {
-    console.error('Failed to connect to MongoDB', err);
-    process.exit(1);
-  }
-  console.log('Connected to MongoDB');
+// const app = express();
+// const port = process.env.PORT || 3000;
 
-  const db = client.db('mydatabase');
-  const collection = db.collection('mycollection');
+// // Middleware
+// app.use(express.json());
 
-  // Define your routes here
+// // MongoDB connection
+// const uri = process.env.MONGODB_URI;
+// console.log(uri);
+// const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 
-  app.get('/', (req, res) => {
-    res.send('Hello, World!');
-  });
+// client.connect(err => {
+//   if (err) {
+//     console.error('Failed to connect to MongoDB', err);
+//     process.exit(1);
+//   }
+//   console.log('Connected to MongoDB');
 
-  app.listen(port, () => {
-    console.log(`Server is running on port ${port}`);
-  });
-});
+//   const db = client.db('mydatabase');
+//   const collection = db.collection('mycollection');
+
+//   // Define your routes here
+
+//   app.get('/', (req, res) => {
+//     res.send('Hello, World!');
+//   });
+
+//   app.listen(port, () => {
+//     console.log(`Server is running on port ${port}`);
+//   });
+// });
