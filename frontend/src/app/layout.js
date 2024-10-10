@@ -13,7 +13,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        <Script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDyXgkobrXgFTNZqpKgqi_XEOe-j3BOe_o" strategy="afterInteractive"></Script>
+        <Script src="https://maps.googleapis.com/maps/api/js?key=${process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}" strategy="afterInteractive"></Script>
         {/* <style>
           {"@import url('https://fonts.googleapis.com/css2?family=Poiret+One&display=swap');"}
         </style> */}
